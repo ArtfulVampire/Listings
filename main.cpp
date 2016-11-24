@@ -28,12 +28,13 @@ QString rightNumber(const int input, int N) // prepend zeros
 int main(int argc, char *argv[])
 {
 	int num = 40;
-	int exper = 1; /// 1, 2, 3
+	int exper = 3; /// 1, 2, 3
 
 	std::vector<int> mixNum1(num); /// CF
 	std::vector<int> mixNum2(num); /// anagrams
 
-	ofstream lst("/media/Files/Pictures/list1.txt");
+	std::ofstream lst;
+	lst.open(("/media/Files/Pictures/list" + QString::number(exper) + ".txt").toStdString());
 	std::iota(std::begin(mixNum1), std::end(mixNum1), 1);
 	std::iota(std::begin(mixNum2), std::end(mixNum2), 1 + num);
 	std::shuffle(std::begin(mixNum1), std::end(mixNum1),
